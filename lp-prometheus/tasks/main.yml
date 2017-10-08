@@ -1,0 +1,7 @@
+- include: prometheus-install.yml
+  become: true
+  tags: ['install']
+
+- include: prometheus-config.yml
+  become: true
+  tags: ['config']

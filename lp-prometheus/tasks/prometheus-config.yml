@@ -1,0 +1,15 @@
+- name: prometheus | Create prometheus config
+  notify: reload prometheus
+  template: 
+    src: templates/prometheus.yml 
+    dest: /etc/prometheus/prometheus.yml
+
+- name: prometheus | Copy rules
+  copy: src={{item}} dest=/etc/prometheus/{{item}}
+  notify: reload prometheus
+  with_items:
+    - home.rules
+
+- name: alertmanager | Copy alertmanager config
+  notify: reload alertmanager
+  copy: src=alertmanager.yml dest=/etc/alertmanager/alertmanager.yml
