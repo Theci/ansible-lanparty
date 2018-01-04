@@ -10,7 +10,7 @@
     name: "{{ item }}"
   with_items:
     - linux-cpupower
-    - cpupower-common
+#    - cpupower-common -- Couldn't find this package on test server, confirmed missing?
 
 - name: CPUPower | Configuration
   template:

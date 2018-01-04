@@ -1,5 +1,0 @@
----
-- name: ZSH | Oh-My-ZSH
-  apt:
-    name: oh-my-zsh
-  tags: [ 'packages' ]
